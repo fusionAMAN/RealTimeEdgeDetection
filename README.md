@@ -132,7 +132,7 @@ Edge-detection/
 
 ```
 git clone https://github.com/fusionAMAN/RealTimeEdgeDetection.git
-cd Edge-detection
+cd RealTimeEdgeDetection
 ```
 ---
 
