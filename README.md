@@ -1,33 +1,33 @@
 # 🧪 Android + OpenCV-C++ + OpenGL Assessment + Web — Flam-Assessment 
 
-> *Real-Time Edge Detection Viewer* - A complete implementation showcasing Android development, OpenCV C++ integration, OpenGL ES rendering, and TypeScript web viewer.
+> **Real-Time Edge Detection Viewer** - A complete implementation showcasing Android development, OpenCV C++ integration, OpenGL ES rendering, and TypeScript web viewer.
 
 ## 🎯 Overview
 
 EdgeViewer is an Android + native hybrid app that:  
-- Captures live camera frames using the *Camera2 API*  
-- Processes them using *native C++ (OpenCV)* for *edge detection*  
-- Displays output in real-time using *OpenGL ES 2.0*.
-- Supports toggling between *Raw* and *Edge-detected* views  
-- Exposes a lightweight *TypeScript Web Viewer* for static visualization
+- Captures live camera frames using the **Camera2 API**  
+- Processes them using **native C++ (OpenCV)** for **edge detection**  
+- Displays output in real-time using **OpenGL ES 2.0**.
+- Supports toggling between **Raw** and **Edge-detected** views  
+- Exposes a lightweight **TypeScript Web Viewer** for static visualization
 
 ---
 
 ## ✨ Features Implemented
 
 ### Android Application 
-- 📸 *Camera2 Preview* | High-performance camera feed using Camera2 API |
-- 🧩 *OpenCV Integration (JNI)* | Native C++ edge detection using OpenCV |
-- 🎨 *OpenGL ES Renderer* | Real-time texture rendering for camera frames |
-- 🔄 *Raw / Edge Toggle* | Switch between normal feed and edge-highlighted frames |
-- ⚡ *FPS Counter* | Live frame rate monitoring |
-- 🌐 *TypeScript Web Viewer* | Simple front-end to visualize frames or mock data
+- 📸 **Camera2 Preview** | High-performance camera feed using Camera2 API |
+- 🧩 **OpenCV Integration (JNI)** | Native C++ edge detection using OpenCV |
+- 🎨 **OpenGL ES Renderer** | Real-time texture rendering for camera frames |
+- 🔄 **Raw / Edge Toggle** | Switch between normal feed and edge-highlighted frames |
+- ⚡ **FPS Counter** | Live frame rate monitoring |
+- 🌐 **TypeScript Web Viewer** | Simple front-end to visualize frames or mock data
 
 
 
 ## 📐 Architecture 
 
-
+```
 ┌────────────────────────┐
 │     Android App        │
 │ (Kotlin + Camera2 API) │
@@ -51,35 +51,35 @@ EdgeViewer is an Android + native hybrid app that:
                   │
                   ▼
            Final Output (Device)
-
+```
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Android
-- *Language*: Kotlin
-- *Build System*: Gradle with Kotlin DSL
-- *NDK*: Native Development Kit
-- *JNI*: Java Native Interface
-- *Camera*: Camera2 API
-- *Rendering*: OpenGL ES 2.0+
+- **Language**: Kotlin
+- **Build System**: Gradle with Kotlin DSL
+- **NDK**: Native Development Kit
+- **JNI**: Java Native Interface
+- **Camera**: Camera2 API
+- **Rendering**: OpenGL ES 2.0+
 
 ### Native C++
-- *OpenCV*: Image processing library
-- *CMake*: Build configuration
-- *JNI*: Native method implementation
+- **OpenCV**: Image processing library
+- **CMake**: Build configuration
+- **JNI**: Native method implementation
 
 ### Web
-- *Language*: TypeScript 5.3.3
-- *Runtime*: ES2020 modules
-- *Server*: http-server
-- *Communication*: WebSocket API
-- *Rendering*: HTML5 Canvas
+- **Language**: TypeScript 5.3.3
+- **Runtime**: ES2020 modules
+- **Server**: http-server
+- **Communication**: WebSocket API
+- **Rendering**: HTML5 Canvas
 
 ---
 ## 📁 Project Structure
-
+```
 Edge-detection/
 ├── app/                                    # Android Application Module (Kotlin)
 │   ├── src/main/
@@ -125,15 +125,15 @@ Edge-detection/
 ├── .gitignore                               # Ignore build folders, Gradle, .idea, native libs
 └── LICENSE                                  # License for open-source submission
 
-
+```
 ## 📦 Setup Instructions
 
 ### 1️⃣ Clone the Repository
 
-
-git clone https://github.com/terror-akshat/Edge-detection.git
+```
+git clone https://github.com/fusionAMAN/RealTimeEdgeDetection.git
 cd Edge-detection
-
+```
 ---
 
 ### 2️⃣ Download & Install OpenCV Android SDK
@@ -141,7 +141,7 @@ cd Edge-detection
 #### > **Download OpenCV-android-sdk.zip from the official OpenCV website.
 #### > **Extract it:
 > **Unzip and place the folder inside project root:
-
+```
 Edge-detection/opencv/
 opencv/
  └── sdk/
@@ -149,7 +149,7 @@ opencv/
          ├── jni/
          ├── libs/
          └── include/
-
+```
 ---
 
 ### 3️⃣ Enable NDK Support in Android Studio
@@ -168,7 +168,7 @@ opencv/
 ### 5️⃣ Configure CMakeLists.txt
 > ** Make sure your jni/CMakeLists.txt contains:
 
-
+```
 set(OpenCV_DIR ${CMAKE_SOURCE_DIR}/../opencv/sdk/native/jni)
 find_package(OpenCV REQUIRED)
 
@@ -178,17 +178,17 @@ target_link_libraries(
     log
     GLESv2
 )
-
+```
 ### 6️⃣ Configure app/build.gradle
 > ** Inside the android block:
-
+```
 externalNativeBuild {
     cmake {
         path "../jni/CMakeLists.txt"
         version "3.10.2"   // or your installed version
     }
 }
-
+```
 ---
 
 ### 8️⃣ Connect a Physical Android Device
@@ -207,32 +207,32 @@ Once launched:
 
 ## Web Viewer Setup
 
-1. *Navigate to web directory*:
-   bash
+1. **Navigate to web directory**:
+   ```bash
    cd web
-   
+   ```
 
-2. *Install dependencies*:
-   bash
+2. **Install dependencies**:
+   ```bash
    npm install
-   
+   ```
 
-3. *Build TypeScript*:
-   bash
+3. **Build TypeScript**:
+   ```bash
    npm run build
-   
+   ```
 
-4. *Start server*:
-   bash
+4. **Start server**:
+   ```bash
    npm run serve
-   
+   ```
 
-5. *Open browser*:
-   
+5. **Open browser**:
+   ```
    http://localhost:8080
-   
+   ```
 ---
 
-*Repository*: https://github.com/fusionAMAN/RealTimeEdgeDetection
+**Repository**: https://github.com/fusionAMAN/RealTimeEdgeDetection
 
-*Contact*: [40guptaaman@gmail.com]
+**Contact**: [40guptaaman@gmail.com]
